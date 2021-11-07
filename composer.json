@@ -1,0 +1,30 @@
+{
+  "name": "shepherdmat/emaillabs-symfony-mailer",
+  "type": "symfony-bridge",
+  "description": "This bundle provides Emaillabs integration for Symfony Mailer",
+  "keywords": ["Symfony", "Mailer", "Emaillabs"],
+  "homepage": "https://emaillabs.io",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maciej Owczarek",
+      "email": "mc.owczarek@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "symfony/mailer": "^4.4"
+  },
+  "require-dev": {
+    "ext-json": "*",
+    "phpunit/phpunit": "9.5.x-dev",
+    "symfony/http-client": "^4.4|^5.0"
+  },
+  "autoload": {
+    "psr-4": { "Shepherdmat\\Symfony\\Mailer\\Emaillabs\\": "" },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "minimum-stability": "dev"
+}
