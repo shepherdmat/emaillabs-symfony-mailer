@@ -15,7 +15,28 @@ composer require shepherdmat/emaillabs-symfony-mailer
 
 ## Usage ##
 
-Send email using standard [SymfonyHttpClient](https://symfony.com/doc/current/http_client.html) as http interface.
+### Symfony project. ###
+If you want to use it in your standard Symfony project, it's easy:
+
+Add parameters to your local .env file:
+```txt
+# .env
+MAILER_DSN=emaillabs://yourAppKey:yourSecretKey@yourActiveHostAccount.smtp
+```
+
+Update services.yaml
+```yaml
+# config/services.yaml
+services:
+    Shepherdmat\Symfony\Mailer\Emaillabs\Transport\EmaillabsTransportFactory:
+        tags: [ 'mailer.transport_factory' ]
+```
+
+Now you can follow example from official [Symfony Mailer](https://symfony.com/doc/current/mailer.html#creating-sending-messages) site.
+
+### Standalone mailer. ###
+
+If you want to send email using standard [SymfonyHttpClient](https://symfony.com/doc/current/http_client.html) as http interface:
 
 ```php
 // require_once __DIR__ . './vendor/autoload.php';
